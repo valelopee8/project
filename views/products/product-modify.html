@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/products/product-modify.css">
+    <script src="/static/js/products/product-modify.js"></script>
+</head>
+<body>
+    <header class="header-container">
+        <img class="logo" src="/static/images/logo.png" alt="">
+        <div class="index">
+            <button onclick="handleHeaderAction('main')">INICIO</button>
+            <button onclick="handleHeaderAction('manageProducts')">ADMINISTRAR PRODUCTOS</button>
+            <button onclick="handleHeaderAction('manageUsers')">ADMINISTRAR USUARIOS</button>
+            <button onclick="handleHeaderAction('logOut')">CERRAR SESIÓN</button>
+        </div>
+    </header>
+    <main class="main-container">
+        <section class="form-container">
+            <form class="form">
+                <h2 class="title-modify">Modificar información</h2>
+                <div class="image"></div>
+                <span>Nombre</span>
+                <input class="product" type="text" name="product">
+                <span>Precio</span>
+                <input class="price" type="text" name="price">
+                <span>Stock</span>
+                <input class="stock" type="text" name="stock">
+                <span>Imagen</span>
+                <input class="image-name" type="text" placeholder="Nombre del archivo y extensión" name="image">
+                <button class="form-button-1" onclick="handleProductAction(event,'modify')">Modificar</button>
+                <span class="msg" style="display: none;"></span>
+                <h2 class="title-delete">¿Deseas eliminar el producto?</h2>
+                <button class="form-button-2" onclick="handleProductAction(event,'delete')">Eliminar</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

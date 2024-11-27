@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/products/product-buy.css">
+    <script src="/static/js/products/admin-product-buy.js"></script>
+</head>
+<body>
+    <header class="header-container">
+        <img class="logo" src="/static/images/logo.png" alt="">
+        <div class="index">
+            <button onclick="handleHeaderAction(event,'main')">INICIO</button>
+            <button onclick="handleHeaderAction(event,'manageProducts')">ADMINISTRAR PRODUCTOS</button>
+            <button onclick="handleHeaderAction(event,'manageUsers')">ADMINISTRAR USUARIOS</button>
+            <button onclick="handleHeaderAction(event,'logOut')">CERRAR SESIÓN</button>
+        </div>
+    </header>
+    <main class="main-container">
+        <section class="form-container">
+            <form class="form">
+                <h2 class="title-buy">Proceso de compra</h2>
+                <div class="image"></div>
+                <span>Cantidad</span>
+                <input class="stock" type="text">
+                <span>Método de pago</span>
+                <select class="method" onchange="mostrarFormularioTarjeta()">
+                    <option value="counted">Contado</option>
+                    <option value="debit">Débito</option>
+                    <option value="credit">Crédito</option>
+                </select>
+                <div class="card" style="display: none;">
+                    <input class="number" type="text" placeholder="Nro. de Tarjeta">
+                    <input class="date" type="text" placeholder="Fecha de Venc.">
+                    <input class="code" type="text" placeholder="Cód. de Seg.">
+                </div>
+                <button class="send-button" onclick="handleProductAction(event)">Comprar</button>
+                <span class="msg"></span>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

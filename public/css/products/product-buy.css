@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    background-color: #10002B;
+    color: white;
+}
+
+.header-container {
+    text-align: center;
+    border-bottom: 5px solid #9D4EDD;
+    background-color: #240046;
+    margin-bottom: 20px;
+    min-width: 790px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.index button {
+    width: auto;
+    padding: 20px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.main-container {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    min-width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #3C096C;
+}
+
+.image {
+    width: 208px;
+    height: 208px;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.form > span {
+    margin-top: 20px;
+}
+
+.form input {
+    font-weight: bold;
+    width: 100%;
+}
+
+.title-register {
+    margin-top: 20px;
+}
+
+.title-buy {
+    margin-bottom: 20px;
+}
+
+input {
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #240046;
+    color: white;
+}
+
+.form-container button {
+    width: 100%;
+    font-weight: bold;
+    margin-top: 20px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #6818A5;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.form-container button:hover {
+    transform: scale(1.1); 
+    background-color: #5A108F; 
+}
+
+.form-container button:active {
+    transform: scale(0.98); 
+    background-color: #5A108F; 
+}
+
+.card input {
+    margin-top: 20px;
+}
+
+input::placeholder {
+    color: white;
+    font-weight: bold;
+}
+
+select{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    background-color: #240046;
+    color: white;
+    font-size: 1rem;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+select:focus {
+    outline: none;
+}

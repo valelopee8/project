@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/index/main-admin.css">
+    <script src="/static/js/index/main-admin.js"></script>
+</head>
+<body>
+    <header class="header-container">
+        <img class="logo" src="/static/images/logo.png" alt="">
+        <div class="index">
+            <button onclick="handleHeaderAction(event,'main')">INICIO</button>
+            <button onclick="handleHeaderAction(event,'manageProducts')">ADMINISTRAR PRODUCTOS</button>
+            <button onclick="handleHeaderAction(event,'manageUsers')">ADMINISTRAR USUARIOS</button>
+            <button onclick="handleHeaderAction(event,'logOut')">CERRAR SESIÓN</button>
+        </div>
+    </header>
+    <main class="main-container">
+        <section class="search-container">
+            <h2 class="title-product">Buscar producto</h2>
+            <form class="search-bar">
+                <input type="text" class="search-bar-input-product" placeholder="Nombre del producto">
+                <input type="text" class="search-bar-input-store" placeholder="Nombre de la sucursal">
+                <button class="search-bar-button" onclick="searchProduct(event)">
+                    <span class="search-bar-icon material-symbols-outlined">search</span>
+                </button>
+            </form>
+            <div class="search-product" style="display: none;"></div>
+        </section>
+        <section class="store-container">
+            <h2 class="title-list">Lista de sucursales</h2>
+            <div class="product-list-container"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/users/register.css">
+    <script src="/static/js/users/register.js"></script>
+</head>
+<body>
+    <main class="main-container">
+        <section class="form-container">
+            <form class="form">
+                <h2 class="title-register">Registrarse</h2>
+                <div class="form-name">
+                    <span>Nombre</span>
+                    <span>Apellido</span>
+                    <input class="first-name" type="text">
+                    <input class="last-name" type="text">
+                </div>
+                <span>Email</span>
+                <input class="email" type="text">
+                <span>Contraseña</span>
+                <input class="password" type="text">
+                <button onclick="handleFormAction(event,'register')">Registrarse</button>
+                <span class="msg" style="display: none;"></span>
+                <h2 class="title-login">¿Ya tenes una cuenta?</h2>
+                <button onclick="handleFormAction(event,'login')">Ingresar</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
