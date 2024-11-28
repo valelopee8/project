@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="/static/css/users/user-manage.css">
-    <script src="/static/js/users/user-manage.js"></script>
+    <link rel="stylesheet" href="/static/css/users/user-create.css">
+    <script src="/static/js/users/user-create.js"></script>
 </head>
 <body>
     <header class="header-container">
@@ -20,19 +19,20 @@
         </div>
     </header>
     <main class="main-container">
-        <section class="search-container">
-            <h2>Buscar usuario</h2>
-            <form class="search-bar">
-                <input class="search-bar-input" placeholder="Ingrese el email">
-                <button class="search-bar-button" onclick="searchUser(event)">
-                    <span class="search-bar-icon material-symbols-outlined">search</span>
-                </button>
+        <section class="form-container">
+            <form class="form">
+                <h2 class="title-create">Crear usuario</h2>
+                <span>Nombre</span>
+                <input class="first-name" type="text">
+                <span>Apellido</span>
+                <input class="last-name" type="text">
+                <span>Email</span>
+                <input class="email" type="text">
+                <span>Contraseña</span>
+                <input class="password" type="text">
+                <button class="form-button-1" onclick="handleUserAction(event)">Crear</button>
+                <span class="msg" style="display: none;"></span>
             </form>
-            <div class="search-user" style="display: none;"></div>
-        </section>
-        <section class="user-container">
-            <h2>Lista de usuarios</h2>
-            <div class="user-list-container"></div>
         </section>
     </main>
 </body>

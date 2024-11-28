@@ -10,6 +10,10 @@ def register():
 def login():
     return flask.render_template('users/login.html')
 
+@users_routes.route('/user/create')
+def user_create():
+    return flask.render_template('users/user-create.html')
+
 @users_routes.route('/user/manage')
 def user_manage():
     return flask.render_template('users/user-manage.html')

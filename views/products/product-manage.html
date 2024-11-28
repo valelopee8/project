@@ -11,10 +11,12 @@
     <header class="header-container">
         <img class="logo" src="/static/images/logo.png" alt="">
         <div class="index">
-            <button onclick="handleHeaderAction(event,'main')">INICIO</button>
-            <button onclick="handleHeaderAction(event,'manageProducts')">ADMINISTRAR PRODUCTOS</button>
-            <button onclick="handleHeaderAction(event,'manageUsers')">ADMINISTRAR USUARIOS</button>
-            <button onclick="handleHeaderAction(event,'logOut')">CERRAR SESIÓN</button>
+            <button onclick="handleHeaderAction('main')">INICIO</button>
+            <button onclick="handleHeaderAction('manageProducts')">ADMINISTRAR PRODUCTOS</button>
+            <button onclick="handleHeaderAction('createProduct')">CREAR PRODUCTO</button>
+            <button onclick="handleHeaderAction('manageUsers')">ADMINISTRAR USUARIOS</button>
+            <button onclick="handleHeaderAction('createUser')">CREAR USUARIO</button>
+            <button onclick="handleHeaderAction('logOut')">CERRAR SESIÓN</button>
         </div>
     </header>
     <main class="main-container">

@@ -24,17 +24,25 @@ class View:
         except Exception as e:
             return f'Error: {str(e)}'
         
-    def modify_user_view(self):
-        try:
-            webview.active_window().load_url('/user/modify')
-            webview.active_window().title = 'GameON - Modify User'
-        except Exception as e:
-            return f'Error: {str(e)}'
         
     def manage_user_view(self):
         try:
             webview.active_window().load_url('/user/manage')
             webview.active_window().title = 'GameON - Manage Users'
+        except Exception as e:
+            return f'Error: {str(e)}'
+        
+    def create_user_view(self):
+        try:
+            webview.active_window().load_url('/user/create')
+            webview.active_window().title = 'GameON - Create User'
+        except Exception as e:
+            return f'Error: {str(e)}'
+        
+    def modify_user_view(self):
+        try:
+            webview.active_window().load_url('/user/modify')
+            webview.active_window().title = 'GameON - Modify User'
         except Exception as e:
             return f'Error: {str(e)}'
         
@@ -49,7 +57,7 @@ class View:
     def create_product_view(self):
         try:
             webview.active_window().load_url('/product/create')
-            webview.active_window().title = 'GameON - Create'
+            webview.active_window().title = 'GameON - Create Product'
         except Exception as e:
             return f'Error: {str(e)}'
 
@@ -82,7 +90,6 @@ class View:
         except Exception as e:
             return f'Error: {str(e)}'
 
-        
     # Vistas para el administrador
     def main_admin_view(self):
         try:

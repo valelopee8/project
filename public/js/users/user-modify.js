@@ -52,7 +52,11 @@ async function handleHeaderAction(action) {
         await pywebview.api.view_api.welcome_view()
     } else if (action == 'manageProducts') {
         await pywebview.api.view_api.manage_product_view()
+    } else if (action == 'createProduct') {
+        await pywebview.api.view_api.create_product_view()
     } else if (action == 'manageUsers') {
         await pywebview.api.view_api.manage_user_view()
+    } else if (action == 'createUser') {
+        await pywebview.api.view_api.create_user_view()
     }
 }

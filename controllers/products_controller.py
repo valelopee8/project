@@ -87,11 +87,19 @@ class Product:
         current_stock = row['Stock'].values[0]
         df.loc[df['Product'] == product, 'Stock'] = int(current_stock) - int(stock)
         df.to_csv(self.determine_path_store_data(store), index=False)
+    
+    # Determinar si un producto existe
+    def validate_product(self,store,product):
+        try:
+            df = self.determine_store(store)
+            return product in df['Product'].values
+        except Exception as e:
+            return f'Error: {str(e)}'
    
     # Añadir un producto
-    def add_product(self,store,product,price,stock):
+    def add_product(self,store,product,price,stock,image):
         try:
-            new_row = {'Product':product,'Price':price,'Stock':stock}
+            new_row = {'Product':product,'Price':price,'Stock':stock,'Image':image}
             df = self.determine_store(store)
             df.loc[len(df)] = new_row
             df.to_csv(self.determine_path_store_data(store),index=False)

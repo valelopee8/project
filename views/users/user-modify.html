@@ -12,7 +12,9 @@
         <div class="index">
             <button onclick="handleHeaderAction('main')">INICIO</button>
             <button onclick="handleHeaderAction('manageProducts')">ADMINISTRAR PRODUCTOS</button>
+            <button onclick="handleHeaderAction('createProduct')">CREAR PRODUCTO</button>
             <button onclick="handleHeaderAction('manageUsers')">ADMINISTRAR USUARIOS</button>
+            <button onclick="handleHeaderAction('createUser')">CREAR USUARIO</button>
             <button onclick="handleHeaderAction('logOut')">CERRAR SESIÓN</button>
         </div>
     </header>
@@ -28,10 +30,10 @@
                 <input class="email" type="text">
                 <span>Contraseña</span>
                 <input class="password" type="text">
-                <button class="form-button-1" onclick="handleUserAction(event,'modify')">Modificar</button>
+                <button class="form-button-1" onclick="handleUserAction('modify')">Modificar</button>
                 <span class="msg" style="display: none;"></span>
                 <h2 class="title-delete">¿Deseas eliminar el usuario?</h2>
-                <button class="form-button-2" onclick="handleUserAction(event,'delete')">Eliminar</button>
+                <button class="form-button-2" onclick="handleUserAction('delete')">Eliminar</button>
             </form>
         </section>
     </main>   
