@@ -14,22 +14,20 @@ window.addEventListener("pywebviewready", async function() {
         document.querySelector(".product-list-container").appendChild(storeTitle)
     
         store.forEach((product, indexProduct) => {
-            if (product.Stock > 0) {
-                const productItem = document.createElement("div")
-                productItem.classList.add("product-item")
-                productItem.innerHTML = `
-                    <div class="product-item-photo">
-                        <img src="/static/images/products/${product.Image}" alt="Product Photo">
-                    </div>
-                    <div class="product-item-info">
-                        <p class="product-item-name">${product.Product}</p>
-                        <p class="product-item-price">$${product.Price}</p>
-                        <p class="product-item-stock">Cant. ${product.Stock}</p>
-                    </div>
-                    <button class="product-item-button" onclick="selectProduct('${storeName}', ${indexProduct})">Administrar</button>
-                `        
-                productContainer.appendChild(productItem)
-            }
+            const productItem = document.createElement("div")
+            productItem.classList.add("product-item")
+            productItem.innerHTML = `
+                <div class="product-item-photo">
+                    <img src="/static/images/products/${product.Image}" alt="Product Photo">
+                </div>
+                <div class="product-item-info">
+                    <p class="product-item-name">${product.Product}</p>
+                    <p class="product-item-price">$${product.Price}</p>
+                    <p class="product-item-stock">Cant. ${product.Stock}</p>
+                </div>
+                <button class="product-item-button" onclick="selectProduct('${storeName}', ${indexProduct})">Administrar</button>
+            `        
+            productContainer.appendChild(productItem)
         })
         document.querySelector(".product-list-container").appendChild(productContainer)
     })
