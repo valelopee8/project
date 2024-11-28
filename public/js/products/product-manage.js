@@ -54,25 +54,20 @@ async function searchProduct(e) {
             const product = store.find(product => product.Product == productSearch)
             
             if (product) {
-                if (product.Stock > 0) {
-                    document.querySelector(".search-product").style.display = "flex"
-                    document.querySelector(".search-product").innerHTML = `
-                        <div class="product-item">
-                            <div class="product-item-photo">
-                                <img src="/static/images/products/${product.Image}" alt="Product Photo">
-                            </div>
-                            <div class="product-item-info">
-                                <p class="product-item-name">${product.Product}</p>
-                                <p class="product-item-price">$${product.Price}</p>
-                                <p class="product-item-stock">Cant. ${product.Stock}</p>
-                            </div>
-                            <button onclick="selectProduct('${storeName}', ${store.indexOf(product)})" class="product-item-button">Administrar</button>
+                document.querySelector(".search-product").style.display = "flex"
+                document.querySelector(".search-product").innerHTML = `
+                    <div class="product-item">
+                        <div class="product-item-photo">
+                            <img src="/static/images/products/${product.Image}" alt="Product Photo">
                         </div>
-                    `
-                } else {
-                    document.querySelector(".search-product").style.display = "block"
-                    document.querySelector(".search-product").innerHTML = 'Producto sin stock'
-                }
+                        <div class="product-item-info">
+                            <p class="product-item-name">${product.Product}</p>
+                            <p class="product-item-price">$${product.Price}</p>
+                            <p class="product-item-stock">Cant. ${product.Stock}</p>
+                        </div>
+                        <button onclick="selectProduct('${storeName}', ${store.indexOf(product)})" class="product-item-button">Administrar</button>
+                    </div>
+                `
             } else {
                 document.querySelector(".search-product").style.display = "block"
                 document.querySelector(".search-product").innerHTML = 'Producto no encontrado en esta sucursal'

@@ -36,7 +36,7 @@ async function handleProductAction(e) {
                     await pywebview.api.view_api.main_view()
                 }, 2000)
             } else {
-                msg.innerHTML = `<p style="color: #f44336;font-weight: bold;">Ingrese una cantidad positiva menor o igual a ${product.Stock}</p>`
+                msg.innerHTML = `<p style="color: white;font-weight: bold;">Ingrese una cantidad positiva menor o igual a ${product.Stock}</p>`
             }
         } else {
             const number = document.querySelector('.number').value
@@ -51,14 +51,14 @@ async function handleProductAction(e) {
                         await pywebview.api.view_api.main_view()
                     }, 2000)
                 } else {
-                    msg.innerHTML = `<p style="color: #f44336;font-weight: bold;">Ingrese una cantidad positiva menor o igual a ${product.Stock}</p>`
+                    msg.innerHTML = `<p style="color: white;font-weight: bold;">Ingrese una cantidad positiva menor o igual a ${product.Stock}</p>`
                 }
             } else {
-                msg.innerHTML = '<p style="color: #f44336;font-weight: bold;">Complete todos los campos de la tarjeta</p>'
+                msg.innerHTML = '<p style="color: white;font-weight: bold;">Complete todos los campos de la tarjeta</p>'
             }
         }
     } else {
-        msg.innerHTML = '<p style="color: #f44336;font-weight: bold;">Complete todos los campos</p>' 
+        msg.innerHTML = '<p style="color: white;font-weight: bold;">Complete todos los campos</p>' 
     } 
 }
 

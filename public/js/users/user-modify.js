@@ -18,7 +18,7 @@ async function handleUserAction(e,action) {
     if (action == 'delete') {
         await pywebview.api.user_api.delete_user(localUser.Email)
         document.querySelector('.msg').style.display = 'block'
-        document.querySelector('.msg').innerHTML = '<p style="color: #f44336; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
+        document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
         document.querySelector('.form-button-1').style.display = 'none'
         document.querySelector('.form-button-2').style.display = 'none'
         document.querySelector('.title-delete').style.display = 'none'
@@ -28,20 +28,40 @@ async function handleUserAction(e,action) {
     }
     
     if (firstName && lastName && email && password) {
-        if (action == 'modify') {
-            await pywebview.api.user_api.modify_user(localUser.Email,firstName,lastName,email,password)
-            document.querySelector('.msg').style.display = 'block'
-            document.querySelector('.msg').innerHTML = '<p style="color: #f44336; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
-            document.querySelector('.form-button-1').style.display = 'none'
-            document.querySelector('.form-button-2').style.display = 'none'
-            document.querySelector('.title-delete').style.display = 'none'
-            setTimeout(async function() {
-                await pywebview.api.view_api.main_admin_view()
-            }, 2000)
+        if (localUser.Email == email) {
+            if (action == 'modify') {
+                await pywebview.api.user_api.modify_user(localUser.Email,firstName,lastName,email,password)
+                document.querySelector('.msg').style.display = 'block'
+                document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
+                document.querySelector('.form-button-1').style.display = 'none'
+                document.querySelector('.form-button-2').style.display = 'none'
+                document.querySelector('.title-delete').style.display = 'none'
+                setTimeout(async function() {
+                    await pywebview.api.view_api.main_admin_view()
+                }, 2000)
+            }
+        } else {
+            const validateUser = await pywebview.api.user_api.validate_user(email)
+            if (!validateUser){
+                if (action == 'modify') {
+                    await pywebview.api.user_api.modify_user(localUser.Email,firstName,lastName,email,password)
+                    document.querySelector('.msg').style.display = 'block'
+                    document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
+                    document.querySelector('.form-button-1').style.display = 'none'
+                    document.querySelector('.form-button-2').style.display = 'none'
+                    document.querySelector('.title-delete').style.display = 'none'
+                    setTimeout(async function() {
+                        await pywebview.api.view_api.main_admin_view()
+                    }, 2000)
+                }
+            } else {
+                    document.querySelector('.msg').style.display = 'block'
+                    document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">El email ya existe</p>'
+            }
         }
     } else {
         document.querySelector('.msg').style.display = 'block'
-        document.querySelector('.msg').innerHTML = '<p style="color: #f44336; font-weight: bold;">Complete todos los campos</p>'
+        document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">Complete todos los campos</p>'
     }
 }
 

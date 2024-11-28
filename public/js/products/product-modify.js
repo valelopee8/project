@@ -23,7 +23,7 @@ async function handleProductAction(e,action) {
     if (action == 'delete') {
         await pywebview.api.product_api.delete_product(store,localProduct.Product)
         document.querySelector('.msg').style.display = 'block'
-        document.querySelector('.msg').innerHTML = '<p style="color: #f44336; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
+        document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
         document.querySelector('.form-button-1').style.display = 'none'
         document.querySelector('.form-button-2').style.display = 'none'
         document.querySelector('.title-delete').style.display = 'none'
@@ -33,11 +33,11 @@ async function handleProductAction(e,action) {
     }
     
     if (product && price && stock && image) {
-        if (parseInt(stock) > 0 && parseInt(price) > 0) {
+        if (parseInt(stock) >= 0 && parseInt(price) > 0) {
             if (action == 'modify') {
                 await pywebview.api.product_api.modify_product(store,localProduct.Product,product,price,stock,image)
                 document.querySelector('.msg').style.display = 'block'
-                document.querySelector('.msg').innerHTML = '<p style="color: #f44336; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
+                document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">Operación exitosa. Redirigiendo al inicio</p>'
                 document.querySelector('.form-button-1').style.display = 'none'
                 document.querySelector('.form-button-2').style.display = 'none'
                 document.querySelector('.title-delete').style.display = 'none'
@@ -47,11 +47,11 @@ async function handleProductAction(e,action) {
             }
         } else {
             document.querySelector('.msg').style.display = 'block'
-            document.querySelector('.msg').innerHTML = '<p style="color: #f44336; font-weight: bold;">Los valores deben ser mayores que cero</p>'
+            document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">El stock debe ser >= 0 y el precio > 0</p>'
         }
     } else {
         document.querySelector('.msg').style.display = 'block'
-        document.querySelector('.msg').innerHTML = '<p style="color: #f44336; font-weight: bold;">Complete todos los campos</p>'
+        document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">Complete todos los campos</p>'
     }
 }
 
