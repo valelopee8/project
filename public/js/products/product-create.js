@@ -8,7 +8,7 @@ async function handleProductAction(e) {
     const store = document.querySelector('.store').value
     
     if (product && price && stock && image && store) {
-        if (parseInt(stock) > 0 && parseInt(price) > 0) {
+        if (parseInt(stock) >= 0 && parseInt(price) > 0) {
             const validateProduct = await pywebview.api.product_api.validate_product(store,product)
             if (!validateProduct) {
                 await pywebview.api.product_api.add_product(store,product,price,stock,image)
@@ -24,7 +24,7 @@ async function handleProductAction(e) {
             }
         } else {
             document.querySelector('.msg').style.display = 'block'
-            document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">Los valores deben ser mayores que cero</p>'
+            document.querySelector('.msg').innerHTML = '<p style="color: white; font-weight: bold;">El stock debe ser >= 0 y el precio > 0</p>'
         }
     } else {
         document.querySelector('.msg').style.display = 'block'
